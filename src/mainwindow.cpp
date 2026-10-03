@@ -2136,7 +2136,11 @@ void MainWindow::rotationDataChanged() {
                 displayPos = 0;
             tickerText += QString::number(i + 1);
             tickerText += ") ";
-            tickerText += m_rotModel.getSingerAtPosition(displayPos).name;
+//            tickerText += m_rotModel.getSingerAtPosition(displayPos).name;
+			const auto &singer = m_rotModel.getSingerAtPosition(displayPos);
+				if (singer.numSongsSung() == 0)
+					tickerText += "*";
+				tickerText += singer.name;
             if (i < listSize - 1)
                 tickerText += " ";
         }
