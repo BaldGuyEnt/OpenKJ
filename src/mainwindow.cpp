@@ -2105,7 +2105,7 @@ void MainWindow::rotationDataChanged() {
         tickerText += QString::number(m_rotModel.singerCount());
         tickerText += " " + sep + " Current: ";
         int displayPos;
-        QString curSingerName = m_rotModel.getSinger(m_rotModel.currentSinger()).name;
+/*        QString curSingerName = m_rotModel.getSinger(m_rotModel.currentSinger()).name;
         if (m_rotModel.currentSinger() < 0)
             curSingerName = "None";
         if (curSingerName != "") {
@@ -2115,6 +2115,17 @@ void MainWindow::rotationDataChanged() {
             tickerText += "None ";
             displayPos = -1;
         }
+*/
+		QString curSingerName;
+
+		if (m_rotModel.currentSinger() >= 0) {
+			curSingerName = m_rotModel.getSinger(m_rotModel.currentSinger()).name;
+			tickerText += curSingerName;
+			displayPos = m_rotModel.getSinger(m_rotModel.currentSinger()).position;
+		} else {
+			tickerText += "None ";
+			displayPos = -1;
+		}		
         int listSize;
         if (m_settings.tickerFullRotation() || (m_rotModel.singerCount() < m_settings.tickerShowNumSingers())) {
             if (curSingerName == "")
