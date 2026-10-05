@@ -125,8 +125,8 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
         set(GST_ARCH "mingw_x86")
     endif ()
 
-    set(GST_BASE_PATH "C:/Program Files/gstreamer/1.0/${GST_ARCH}")
-    set(GST_BASE_PATH_NATIVE "C:\\Program Files\\gstreamer\\1.0\\${GST_ARCH}")
+    set(GST_BASE_PATH "C:/Dev/GStreamer/1.0/${GST_ARCH}")
+    set(GST_BASE_PATH_NATIVE "C:\\Dev\\GStreamer\\1.0\\${GST_ARCH}")
     message("Using GST_BASE_PATH: ${GST_BASE_PATH}")
     message("Using GST_BASE_PATH_NATIVE: ${GST_BASE_PATH_NATIVE}")
     include_directories(
